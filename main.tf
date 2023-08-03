@@ -24,10 +24,10 @@ resource "azurerm_service_plan" "sp" {
   resource_group_name = azurerm_resource_group.leguedes.name
   location            = azurerm_resource_group.leguedes.location
   sku_name            = var.app_service_plan_size
-  os_type             = "Windows"
+  os_type             = "Linux"
 }
 
-resource "azurerm_windows_web_app" "wp" {
+resource "azurerm_linux_web_app" "wepapp" {
   name                = var.app_service_name
   resource_group_name = azurerm_resource_group.leguedes.name
   location            = azurerm_service_plan.sp.location
