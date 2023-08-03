@@ -27,7 +27,7 @@ resource "azurerm_service_plan" "sp" {
   os_type             = "Linux"
 }
 
-resource "azurerm_linux_web_app" "wepapp" {
+resource "azurerm_linux_web_app" "webapp" {
   name                = var.app_service_name
   resource_group_name = azurerm_resource_group.leguedes.name
   location            = azurerm_service_plan.sp.location
