@@ -14,22 +14,22 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "rg" {
+resource "azurerm_resource_group" "leguedes" {
   name     = var.resource_group_name
   location = var.resource_group_location
 }
 
 resource "azurerm_service_plan" "sp" {
   name                = var.app_service_name
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.leguedes.name
+  location            = azurerm_resource_group.leguedes.location
   sku_name            = var.app_service_plan_size
   os_type             = "Windows"
 }
 
 resource "azurerm_windows_web_app" "wp" {
   name                = var.app_service_name
-  resource_group_name = azurerm_resource_group.rg.name
+  resource_group_name = azurerm_resource_group.leguedes.name
   location            = azurerm_service_plan.sp.location
   service_plan_id     = azurerm_service_plan.sp.id
 
