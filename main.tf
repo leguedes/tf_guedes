@@ -35,8 +35,6 @@ resource "azurerm_windows_web_app" "wp" {
 
   site_config {
     application_stack {
-      current_stack       = "dotnet"
-      dotnet_version      = "v4.0"
       docker_image_name   = var.docker_image
       docker_registry_url = var.docker_registry
     }
